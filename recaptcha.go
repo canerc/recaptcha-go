@@ -150,7 +150,7 @@ func (r *ReCAPTCHA) confirm(recaptcha reCHAPTCHARequest, options VerifyOption) (
 		return
 	}
 
-	if result.ErrorCodes != nil {
+	if result.ErrorCodes != nil && len(result.ErrorCodes) > 0 {
 		Err = &Error{msg: fmt.Sprintf("remote error codes: %v", result.ErrorCodes), ErrorCodes: result.ErrorCodes}
 		return
 	}
