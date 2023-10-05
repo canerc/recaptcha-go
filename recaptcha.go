@@ -191,10 +191,10 @@ func (r *ReCAPTCHA) confirm(recaptcha reCHAPTCHARequest, options VerifyOption) (
 			Err = &Error{msg: fmt.Sprintf("received score '%f', while expecting minimum '%f'", result.Score, options.Threshold)}
 			return
 		}
-		if options.Threshold == 0 && DefaultThreshold > result.Score {
-			Err = &Error{msg: fmt.Sprintf("received score '%f', while expecting minimum '%f'", result.Score, DefaultThreshold)}
-			return
-		}
+		// if options.Threshold == 0 && DefaultThreshold > result.Score {
+		// 	Err = &Error{msg: fmt.Sprintf("received score '%f', while expecting minimum '%f'", result.Score, DefaultThreshold)}
+		// 	return
+		// }
 	}
 	return
 }
